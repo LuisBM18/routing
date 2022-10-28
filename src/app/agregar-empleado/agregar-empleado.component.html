@@ -1,0 +1,39 @@
+<app-ver-empleados *ngFor="let empleado of ListaEmp index as i" [empleadoLista]="empleado" [indice]="i"
+(click)="editar(i)" (dblclick)="eliminar(i)"></app-ver-empleados>
+
+<div class= "container">
+  <div class= "row">
+    <div class="col-md-8 mt-4">
+      <div class="card mt-4">
+        <div class="card-body">
+          <div class="card-title">
+             Insertar Nuevo Empleado
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="Nombre" aria-describedby="nombreHelp" [(ngModel)]="empleado.Nombre" placeholder="Ingresa el Nombre">
+          </div>
+          <div class="form-group mt-2">
+            <input type="text" class="form-control" id="Apellido" aria-describedby="nombreHelp" [(ngModel)]="empleado.Apellido" placeholder="Ingresa el Apellido">
+          </div>
+          <div class="form-group mt-2">
+            <input type="text" class="form-control" id="Edad" aria-describedby="nombreHelp" [(ngModel)]="empleado.Edad" placeholder="Ingresa la Edad">
+          </div>
+          <div class="form-group mt-2">
+            <input type="text" class="form-control" id="Usuario" aria-describedby="nombreHelp" [(ngModel)]="empleado.Usuario" placeholder="Ingresa el Usuario">
+          </div>
+          <div class="mt-2">
+            <button *ngIf="!esEdicion" (click)="Agregar()" class="btn btn-primary" >
+              Agregar
+            </button>
+            <button *ngIf="esEdicion" (click)="AceptarEdicion()" class="btn btn-primary" >
+              Editar
+            </button>
+          </div>
+         </div>
+        </div>
+      </div>
+    <div class="col-md-4">
+      <img width="300" src="https://img.freepik.com/vector-gratis/coleccion-trabajadores-supermercados_52683-37599.jpg?w=2000" alt="">
+    </div>
+  </div>
+</div>

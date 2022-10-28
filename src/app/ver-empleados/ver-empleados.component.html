@@ -1,0 +1,12 @@
+<ul class="list-group">
+  <li
+  class="list-group-item list-group-item-action">
+  <span class="badge  bg-dark">{{ empleadoLista.Id }}</span> {{ empleadoLista.Nombre }} - {{ empleadoLista.Apellido }} - {{ empleadoLista.Edad}} - {{ empleadoLista.Usuario}}
+  <button type="button" class="btn btn-danger" >Eliminar</button>
+  <ul style="list-style: none;">
+    <li *ngFor="let Caracteristica of items">{{Caracteristica}}</li>
+  </ul>
+  <app-caracteristicas-empleado (Caracteristicas)="AgregarCaracteristica($event)"></app-caracteristicas-empleado>
+
+  </li>
+</ul>
